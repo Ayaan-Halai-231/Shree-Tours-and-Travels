@@ -1,0 +1,19 @@
+# .NET / C#
+bin/
+obj/
+.vs/
+*.user
+*.suo
+
+# Node / JS
+node_modules/
+dist/
+build/
+.env
+.env.local
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
