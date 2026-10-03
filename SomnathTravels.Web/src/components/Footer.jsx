@@ -17,7 +17,7 @@ const Footer = () => {
                 <img src={logo} alt="Shree Tours & Travels" height="80" />
               </div>
               <p className="text-light text-opacity-75 small lh-lg text-justify">
-                shreetoursandtravels.com is one of the leading taxi service providers in India, based in Somnath, Gujarat. Currently providing the affordable budget car rental services in all major cities across Gujarat.
+                shreetourstravels.online is one of the leading taxi service providers in India, based in Somnath, Gujarat. Currently providing affordable budget car rental services in all major cities across Gujarat.
               </p>
             </div>
           </Col>
@@ -93,7 +93,7 @@ const Footer = () => {
         <Row className="align-items-center">
           <Col md={8} className="text-center text-md-start mb-3 mb-md-0">
             <p className="mb-0 text-light text-opacity-50 small">
-              Copyright &copy; {new Date().getFullYear()} Shree Tours & Travels - All Right Reserved By <a href="/" className="text-warning text-decoration-none">shreetoursandtravels.com</a>. Website Made With &#10084; By Eyelash Technologies
+              Copyright &copy; {new Date().getFullYear()} Shree Tours & Travels - All Right Reserved By <a href="/" className="text-warning text-decoration-none">shreetourstravels.online</a>. Website Made With &#10084; By Eyelash Technologies
             </p>
           </Col>
           <Col md={4} className="text-center text-md-end">

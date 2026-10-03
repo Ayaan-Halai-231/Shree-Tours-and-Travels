@@ -22,7 +22,8 @@ const BookingForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5174/api/bookings', formData);
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5174';
+      const response = await axios.post(`${API_URL}/api/bookings`, formData);
       setMessage('Booking submitted successfully! We will contact you shortly.');
       setFormData({
         fullName: '',
