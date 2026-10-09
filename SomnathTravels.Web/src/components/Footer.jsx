@@ -32,7 +32,7 @@ const Footer = () => {
               <li className="mb-2"><a href="#" className="text-light text-opacity-75 text-decoration-none hover-warning transition-all">Chat With Us</a></li>
               <li className="mb-2"><Link to="/contact" className="text-light text-opacity-75 text-decoration-none hover-warning transition-all">Contact Us</Link></li>
               <li className="mb-2"><Link to="/" className="text-light text-opacity-75 text-decoration-none hover-warning transition-all">Book a Cab Now</Link></li>
-              <li className="mb-2"><a href="tel:9924483215" className="text-light text-opacity-75 text-decoration-none hover-warning transition-all">Book Via Phone</a></li>
+              <li className="mb-2"><a href="tel:9054450052" className="text-light text-opacity-75 text-decoration-none hover-warning transition-all">Book Via Phone</a></li>
             </ul>
           </Col>
 
@@ -41,7 +41,7 @@ const Footer = () => {
             <h5 className="text-warning mb-4 fw-bold text-uppercase" style={{ letterSpacing: '1px' }}>Customer Support</h5>
             <ul className="list-unstyled text-light text-opacity-75 small lh-lg mb-4">
               <li className="mb-2"><a href="mailto:shreetoursandtravels@gmail.com" className="text-light text-opacity-75 text-decoration-none hover-warning transition-all"><EnvelopeFill className="me-2 text-warning" />shreetoursandtravels@gmail.com</a></li>
-              <li className="mb-2"><a href="tel:9924483215" className="text-light text-opacity-75 text-decoration-none hover-warning transition-all"><TelephoneFill className="me-2 text-warning" />(+91) 9924483215</a></li>
+              <li className="mb-2"><a href="tel:9054450052" className="text-light text-opacity-75 text-decoration-none hover-warning transition-all"><TelephoneFill className="me-2 text-warning" />(+91) 9054450052</a></li>
               <li className="mb-2"><GeoAltFill className="me-2 text-warning" />Somnath, Gujarat, India.</li>
             </ul>
 

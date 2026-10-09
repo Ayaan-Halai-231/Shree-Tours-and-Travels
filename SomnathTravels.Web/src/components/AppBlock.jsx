@@ -18,7 +18,7 @@ const AppBlock = () => {
               Travel with peace of mind. Our experienced, background-checked drivers ensure a smooth and safe journey.
             </h3>
             <div className="d-inline-block bg-warning rounded-pill px-5 py-3 shadow-lg hover-lift cursor-pointer transition-all">
-              <h4 className="mb-0 fw-bold"><a href="tel:9924483215" className="text-dark text-decoration-none">Book Now: 9924483215</a></h4>
+              <h4 className="mb-0 fw-bold"><a href="tel:9054450052" className="text-dark text-decoration-none">Book Now: 9054450052</a></h4>
             </div>
           </Col>
           <Col md={5} className="text-center text-md-end">

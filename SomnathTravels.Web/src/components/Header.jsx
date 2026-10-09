@@ -14,7 +14,7 @@ const Header = () => {
           <Col md={6} className="text-end">
             <span className="me-3">
               <TelephoneFill className="me-2 text-warning" />
-              <small>9924483215 / 9712472876</small>
+              <small>9054450052</small>
             </span>
             <span>
               <EnvelopeFill className="me-2 text-warning" />

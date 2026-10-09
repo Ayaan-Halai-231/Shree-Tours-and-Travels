@@ -19,7 +19,7 @@ const Faq = () => {
             <Accordion.Item eventKey="0" className="border-0 border-bottom">
               <Accordion.Header className="fw-bold">How do I book a taxi?</Accordion.Header>
               <Accordion.Body className="text-muted">
-                You can book a taxi through our website by filling out the booking form on the homepage, or you can directly call us at 9924483215. We offer instant booking confirmations.
+                You can book a taxi through our website by filling out the booking form on the homepage, or you can directly call us at 9054450052. We offer instant booking confirmations.
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="1" className="border-0 border-bottom">
