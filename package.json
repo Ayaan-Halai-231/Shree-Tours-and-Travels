@@ -1,0 +1,7 @@
+{
+  "name": "somnathtravels",
+  "private": true,
+  "scripts": {
+    "build": "cd SomnathTravels.Web && npm install && npm run build"
+  }
+}
