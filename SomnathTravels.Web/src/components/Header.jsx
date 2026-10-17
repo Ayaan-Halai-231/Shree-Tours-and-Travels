@@ -18,7 +18,7 @@ const Header = () => {
             </span>
             <span>
               <EnvelopeFill className="me-2 text-warning" />
-              <small>shreetoursandtravels@gmail.com</small>
+              <small>shreetourstravels50052@gmail.com</small>
             </span>
           </Col>
         </Row>

@@ -30,7 +30,7 @@ const servicesData = [
   {
     title: 'Luxury Car Hire',
     desc: 'At shreetoursandtravels.com, you will find a wide range of luxury cars with best price & instant availability.',
-    img: 'https://images.unsplash.com/photo-1503376712351-460d3d5f57de?w=500&auto=format&fit=crop'
+    img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&auto=format&fit=crop'
   }
 ];
 

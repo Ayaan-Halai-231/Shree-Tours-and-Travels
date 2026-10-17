@@ -31,5 +31,10 @@ namespace SomnathTravels.Api.Models
         public string Vehicle { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public string Status { get; set; } = "Pending";
+
+        [System.ComponentModel.DataAnnotations.Schema.Column(TypeName = "decimal(18,2)")]
+        public decimal? TotalAmount { get; set; }
     }
 }

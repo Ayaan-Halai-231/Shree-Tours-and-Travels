@@ -40,7 +40,7 @@ const Footer = () => {
           <Col lg={3} md={6} className="mb-4 mb-lg-0">
             <h5 className="text-warning mb-4 fw-bold text-uppercase" style={{ letterSpacing: '1px' }}>Customer Support</h5>
             <ul className="list-unstyled text-light text-opacity-75 small lh-lg mb-4">
-              <li className="mb-2"><a href="mailto:shreetoursandtravels@gmail.com" className="text-light text-opacity-75 text-decoration-none hover-warning transition-all"><EnvelopeFill className="me-2 text-warning" />shreetoursandtravels@gmail.com</a></li>
+              <li className="mb-2"><a href="mailto:shreetourstravels50052@gmail.com" className="text-light text-opacity-75 text-decoration-none hover-warning transition-all"><EnvelopeFill className="me-2 text-warning" />shreetourstravels50052@gmail.com</a></li>
               <li className="mb-2"><a href="tel:9054450052" className="text-light text-opacity-75 text-decoration-none hover-warning transition-all"><TelephoneFill className="me-2 text-warning" />(+91) 9054450052</a></li>
               <li className="mb-2"><GeoAltFill className="me-2 text-warning" />Somnath, Gujarat, India.</li>
             </ul>

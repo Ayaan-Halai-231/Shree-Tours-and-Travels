@@ -14,6 +14,8 @@ const BookingForm = () => {
   });
 
   const [message, setMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,10 +23,20 @@ const BookingForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (formData.vehicle === 'Select Vehicle') {
+      setIsSuccess(false);
+      setMessage('Please select a vehicle from the list.');
+      return;
+    }
+
+    setSubmitting(true);
+    setMessage('');
+
     try {
       const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5174';
       const response = await axios.post(`${API_URL}/api/bookings`, formData);
-      setMessage('Booking submitted successfully! We will contact you shortly.');
+      setIsSuccess(true);
+      setMessage('🎉 Booking confirmed successfully! A confirmation email has been sent to your email address.');
       setFormData({
         fullName: '',
         email: '',
@@ -36,7 +48,10 @@ const BookingForm = () => {
       });
     } catch (error) {
       console.error(error);
-      setMessage('Error submitting booking. Please try again.');
+      setIsSuccess(false);
+      setMessage('Error submitting booking. Please check your network and try again.');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -55,7 +70,11 @@ const BookingForm = () => {
           </Col>
           <Col md={8}>
             <Form onSubmit={handleSubmit} className="p-5 bg-white h-100">
-              {message && <div className="alert alert-success border-0 shadow-sm">{message}</div>}
+              {message && (
+                <div className={`alert ${isSuccess ? 'alert-success' : 'alert-danger'} border-0 shadow-sm mb-4`}>
+                  {message}
+                </div>
+              )}
               <Row className="g-4">
                 <Col md={4}>
                   <Form.Group>
@@ -105,8 +124,14 @@ const BookingForm = () => {
                   </Form.Group>
                 </Col>
                 <Col md={12} className="text-end mt-4">
-                  <Button variant="warning" type="submit" size="lg" className="fw-bold px-5 text-dark rounded-3 shadow hover-lift w-100 py-3 text-uppercase tracking-wider">
-                    Confirm Booking
+                  <Button 
+                    variant="warning" 
+                    type="submit" 
+                    size="lg" 
+                    disabled={submitting} 
+                    className="fw-bold px-5 text-dark rounded-3 shadow hover-lift w-100 py-3 text-uppercase tracking-wider"
+                  >
+                    {submitting ? 'Confirming Booking...' : 'Confirm Booking'}
                   </Button>
                 </Col>
               </Row>

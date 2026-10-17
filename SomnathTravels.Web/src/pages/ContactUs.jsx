@@ -10,7 +10,7 @@ const ContactUs = () => {
     subject: '',
     message: ''
   });
-  
+
   const [submitStatus, setSubmitStatus] = useState('');
 
   const handleChange = (e) => {
@@ -39,9 +39,9 @@ const ContactUs = () => {
               <p className="text-muted mb-5">
                 If you have any questions, just fill in the contact form, and we will answer you shortly. If you are living nearby, come visit us!
               </p>
-              
+
               <div className="d-flex mb-4 align-items-center">
-                <div className="bg-warning text-dark p-3 rounded-circle me-3 d-flex justify-content-center align-items-center" style={{width: '50px', height: '50px'}}>
+                <div className="bg-warning text-dark p-3 rounded-circle me-3 d-flex justify-content-center align-items-center" style={{ width: '50px', height: '50px' }}>
                   <GeoAltFill size={20} />
                 </div>
                 <div>
@@ -49,9 +49,9 @@ const ContactUs = () => {
                   <p className="text-muted mb-0">Somnath, Gujarat, India.</p>
                 </div>
               </div>
-              
+
               <div className="d-flex mb-4 align-items-center">
-                <div className="bg-warning text-dark p-3 rounded-circle me-3 d-flex justify-content-center align-items-center" style={{width: '50px', height: '50px'}}>
+                <div className="bg-warning text-dark p-3 rounded-circle me-3 d-flex justify-content-center align-items-center" style={{ width: '50px', height: '50px' }}>
                   <TelephoneFill size={20} />
                 </div>
                 <div>
@@ -59,19 +59,19 @@ const ContactUs = () => {
                   <p className="text-muted mb-0">+91 9054450052</p>
                 </div>
               </div>
-              
+
               <div className="d-flex mb-4 align-items-center">
-                <div className="bg-warning text-dark p-3 rounded-circle me-3 d-flex justify-content-center align-items-center" style={{width: '50px', height: '50px'}}>
+                <div className="bg-warning text-dark p-3 rounded-circle me-3 d-flex justify-content-center align-items-center" style={{ width: '50px', height: '50px' }}>
                   <EnvelopeFill size={20} />
                 </div>
                 <div>
                   <h5 className="fw-bold mb-1">Email Address</h5>
-                  <p className="text-muted mb-0">shreetoursandtravels@gmail.com</p>
+                  <p className="text-muted mb-0">shreetourstravels50052@gmail.com</p>
                 </div>
               </div>
             </div>
           </Col>
-          
+
           <Col md={7}>
             <div className="bg-white p-5 rounded-4 shadow-sm">
               <h3 className="fw-bold mb-4">Send Us a Message</h3>
