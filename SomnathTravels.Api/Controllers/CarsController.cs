@@ -146,7 +146,7 @@ namespace SomnathTravels.Api.Controllers
 
         // POST: api/Cars/upload-image
         [HttpPost("upload-image")]
-        public async Task<IActionResult> UploadImage([FromForm] IFormFile file)
+        public async Task<IActionResult> UploadImage(IFormFile file)
         {
             if (file == null || file.Length == 0)
             {

@@ -1,7 +1,6 @@
 import React from 'react';
 import HeroSlider from '../components/HeroSlider';
 import BookingForm from '../components/BookingForm';
-import FareList from '../components/FareList';
 import ChooseVehicle from '../components/ChooseVehicle';
 import FunFacts from '../components/FunFacts';
 import Services from '../components/Services';
@@ -14,7 +13,6 @@ const Home = () => {
     <>
       <HeroSlider />
       <BookingForm />
-      <FareList />
       <ChooseVehicle />
       <FunFacts />
       <Services />

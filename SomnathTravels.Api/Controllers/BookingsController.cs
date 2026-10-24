@@ -113,7 +113,6 @@ namespace SomnathTravels.Api.Controllers
             });
         }
 
-        [HttpPut("{id}/confirm")]
         [HttpPost("{id}/confirm")]
         public async Task<IActionResult> ConfirmBooking(int id, [FromBody] ConfirmBookingRequestDto? request = null)
         {

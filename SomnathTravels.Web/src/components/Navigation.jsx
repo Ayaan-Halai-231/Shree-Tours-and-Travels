@@ -16,10 +16,11 @@ const Navigation = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto align-items-center fw-semibold">
             <Nav.Link as={Link} to="/" className={`px-3 ${location.pathname === '/' ? 'text-warning' : ''}`}>Home</Nav.Link>
+            <Nav.Link as={Link} to="/cars" className={`px-3 ${location.pathname === '/cars' ? 'text-warning' : ''}`}>Cars</Nav.Link>
             <Nav.Link as={Link} to="/about" className={`px-3 ${location.pathname === '/about' ? 'text-warning' : ''}`}>About Us</Nav.Link>
             <Nav.Link as={Link} to="/faq" className={`px-3 ${location.pathname === '/faq' ? 'text-warning' : ''}`}>FAQ</Nav.Link>
             <Nav.Link as={Link} to="/contact" className={`px-3 ${location.pathname === '/contact' ? 'text-warning' : ''}`}>Contact Us</Nav.Link>
-            <Button variant="danger" className="ms-3 d-flex align-items-center rounded-pill px-4">
+            <Button as="a" href="tel:9054450052" variant="danger" className="ms-3 d-flex align-items-center rounded-pill px-4 text-decoration-none">
               <TelephoneFill className="me-2" /> 9054450052
             </Button>
           </Nav>

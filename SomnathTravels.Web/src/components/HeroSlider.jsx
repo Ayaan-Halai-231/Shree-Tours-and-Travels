@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import heroImage from '../assets/hero_new.jpg';
 
 const HeroSlider = () => {
@@ -16,9 +17,27 @@ const HeroSlider = () => {
           <p className="text-warning fs-4 fw-semibold mb-2" style={{ letterSpacing: '2px', textTransform: 'uppercase' }}>Experience the Divine Journey</p>
           <h1 className="display-2 fw-bold text-white mb-3 text-center" style={{ textShadow: '2px 4px 10px rgba(0,0,0,0.5)' }}>Shree Tours & Travels</h1>
           <h2 className="fs-3 text-light mb-5 text-center">Your Ultimate Gateway to Somnath & Beyond</h2>
-          <div className="d-flex gap-3">
-            <Button variant="warning" size="lg" className="rounded-pill px-5 fw-bold shadow-lg">Book Now</Button>
-            <Button variant="outline-light" size="lg" className="rounded-pill px-5 fw-bold">Explore Fleet</Button>
+          <div className="d-flex gap-3 flex-wrap justify-content-center">
+            <Button 
+              variant="warning" 
+              size="lg" 
+              className="rounded-pill px-5 fw-bold shadow-lg"
+              onClick={() => {
+                const el = document.getElementById('booking-section') || document.querySelector('form');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Book Now
+            </Button>
+            <Button 
+              as={Link} 
+              to="/cars" 
+              variant="outline-light" 
+              size="lg" 
+              className="rounded-pill px-5 fw-bold"
+            >
+              Explore Fleet
+            </Button>
           </div>
         </Carousel.Caption>
       </Carousel.Item>

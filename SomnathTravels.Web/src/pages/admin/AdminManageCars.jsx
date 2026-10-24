@@ -419,8 +419,11 @@ const AdminManageCars = () => {
                           </div>
                           <div>
                             <div className="fw-bold text-dark">{car.name}</div>
-                            <div className="small text-muted">
-                              {car.brand} {car.model}
+                            <div className="small text-muted d-flex align-items-center gap-2 flex-wrap mt-1">
+                              <span>{car.brand} {car.model}</span>
+                              {car.fuelType && <Badge bg="light" text="dark" className="border">{car.fuelType}</Badge>}
+                              {car.seatingCapacity && <Badge bg="light" text="dark" className="border">{car.seatingCapacity} Seats</Badge>}
+                              {car.extraKilometreCharge && <span className="text-secondary small">₹{car.extraKilometreCharge}/km</span>}
                             </div>
                           </div>
                         </div>
@@ -564,14 +567,122 @@ const AdminManageCars = () => {
                   </Form.Group>
                 </Col>
 
-                <Col md={12}>
+                <Col md={4}>
+                  <Form.Group>
+                    <Form.Label className="fw-semibold small">Registration Number</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="registrationNumber"
+                      value={formData.registrationNumber || ''}
+                      onChange={handleFormChange}
+                      placeholder="e.g. GJ-11-AB-1234"
+                    />
+                  </Form.Group>
+                </Col>
+
+                <Col md={4}>
+                  <Form.Group>
+                    <Form.Label className="fw-semibold small">Model Year</Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="year"
+                      value={formData.year || ''}
+                      onChange={handleFormChange}
+                      placeholder="2024"
+                      min="2000"
+                      max={CURRENT_YEAR + 1}
+                    />
+                  </Form.Group>
+                </Col>
+
+                <Col md={4}>
+                  <Form.Group>
+                    <Form.Label className="fw-semibold small">Vehicle Type</Form.Label>
+                    <Form.Select name="vehicleType" value={formData.vehicleType || 'Sedan'} onChange={handleFormChange}>
+                      <option value="Sedan">Sedan</option>
+                      <option value="SUV">SUV</option>
+                      <option value="Compact SUV">Compact SUV</option>
+                      <option value="MUV">MUV</option>
+                      <option value="Luxury SUV">Luxury SUV</option>
+                      <option value="Luxury Sedan">Luxury Sedan</option>
+                      <option value="Hatchback">Hatchback</option>
+                      <option value="Electric SUV">Electric SUV</option>
+                      <option value="Electric Sedan">Electric Sedan</option>
+                    </Form.Select>
+                  </Form.Group>
+                </Col>
+
+                <Col md={4}>
+                  <Form.Group>
+                    <Form.Label className="fw-semibold small text-dark">
+                      Fuel Type * <span className="text-warning fw-bold">(Dropdown)</span>
+                    </Form.Label>
+                    <Form.Select
+                      name="fuelType"
+                      value={formData.fuelType || 'Petrol'}
+                      onChange={handleFormChange}
+                      className="border-warning"
+                      required
+                    >
+                      <option value="Petrol">Petrol</option>
+                      <option value="Diesel">Diesel</option>
+                      <option value="CNG">CNG</option>
+                      <option value="Electric">Electric</option>
+                      <option value="Hybrid">Hybrid</option>
+                      <option value="CNG/Petrol">CNG / Petrol</option>
+                    </Form.Select>
+                  </Form.Group>
+                </Col>
+
+                <Col md={4}>
+                  <Form.Group>
+                    <Form.Label className="fw-semibold small text-dark">
+                      Seating Capacity *
+                    </Form.Label>
+                    <Form.Control
+                      type="number"
+                      name="seatingCapacity"
+                      value={formData.seatingCapacity || ''}
+                      onChange={handleFormChange}
+                      min="1"
+                      max="50"
+                      placeholder="e.g. 5, 7, 8"
+                      required
+                    />
+                  </Form.Group>
+                </Col>
+
+                <Col md={4}>
+                  <Form.Group>
+                    <Form.Label className="fw-semibold small">Transmission</Form.Label>
+                    <Form.Select name="transmission" value={formData.transmission || 'Automatic'} onChange={handleFormChange}>
+                      <option value="Manual">Manual</option>
+                      <option value="Automatic">Automatic</option>
+                    </Form.Select>
+                  </Form.Group>
+                </Col>
+
+                <Col md={6}>
+                  <Form.Group>
+                    <Form.Label className="fw-semibold small">Color</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="color"
+                      value={formData.color || ''}
+                      onChange={handleFormChange}
+                      placeholder="e.g. White, Silver, Black"
+                    />
+                  </Form.Group>
+                </Col>
+
+                <Col md={6}>
                   <Form.Group>
                     <Form.Label className="fw-semibold small">Availability Status</Form.Label>
-                    <Form.Select name="status" value={formData.status} onChange={handleFormChange}>
-                      <option>Available</option>
-                      <option>Booked</option>
-                      <option>Maintenance</option>
-                      <option>Inactive</option>
+                    <Form.Select name="status" value={formData.status || 'Available'} onChange={handleFormChange}>
+                      <option value="Available">Available</option>
+                      <option value="Booked">Booked</option>
+                      <option value="Maintenance">Maintenance</option>
+                      <option value="Inactive">Inactive</option>
                     </Form.Select>
                   </Form.Group>
                 </Col>
@@ -691,9 +802,9 @@ const AdminManageCars = () => {
               </div>
 
               <Row className="g-3">
-                <Col md={6}>
+                <Col md={4}>
                   <Form.Group>
-                    <Form.Label className="fw-semibold small">Rent Per Day *</Form.Label>
+                    <Form.Label className="fw-semibold small">Rent Per Day * (24 Hrs)</Form.Label>
                     <Form.Control
                       type="number"
                       step="0.01"
@@ -707,9 +818,9 @@ const AdminManageCars = () => {
                   </Form.Group>
                 </Col>
 
-                <Col md={6}>
+                <Col md={4}>
                   <Form.Group>
-                    <Form.Label className="fw-semibold small">Rent Per Hour</Form.Label>
+                    <Form.Label className="fw-semibold small">Hourly Rate (₹/hr)</Form.Label>
                     <Form.Control
                       type="number"
                       step="0.01"
@@ -718,6 +829,51 @@ const AdminManageCars = () => {
                       onChange={handleFormChange}
                       min="0"
                       placeholder="e.g. 200"
+                    />
+                  </Form.Group>
+                </Col>
+
+                <Col md={4}>
+                  <Form.Group>
+                    <Form.Label className="fw-semibold small">Extra KM Charge (₹/km)</Form.Label>
+                    <Form.Control
+                      type="number"
+                      step="0.01"
+                      name="extraKilometreCharge"
+                      value={formData.extraKilometreCharge}
+                      onChange={handleFormChange}
+                      min="0"
+                      placeholder="e.g. 12"
+                    />
+                  </Form.Group>
+                </Col>
+
+                <Col md={6}>
+                  <Form.Group>
+                    <Form.Label className="fw-semibold small">Driver Allowance / Charge (₹/day)</Form.Label>
+                    <Form.Control
+                      type="number"
+                      step="0.01"
+                      name="driverCharge"
+                      value={formData.driverCharge}
+                      onChange={handleFormChange}
+                      min="0"
+                      placeholder="e.g. 500"
+                    />
+                  </Form.Group>
+                </Col>
+
+                <Col md={6}>
+                  <Form.Group>
+                    <Form.Label className="fw-semibold small">Security Deposit (₹)</Form.Label>
+                    <Form.Control
+                      type="number"
+                      step="0.01"
+                      name="securityDeposit"
+                      value={formData.securityDeposit}
+                      onChange={handleFormChange}
+                      min="0"
+                      placeholder="e.g. 5000"
                     />
                   </Form.Group>
                 </Col>

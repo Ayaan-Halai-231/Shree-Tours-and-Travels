@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const vehicles = [
   { name: 'Honda City', rent: '₹10/KM', img: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=500&auto=format&fit=crop' },
@@ -36,6 +37,12 @@ const ChooseVehicle = () => {
             </Col>
           ))}
         </Row>
+
+        <div className="text-center mt-5">
+          <Button as={Link} to="/cars" variant="warning" size="lg" className="rounded-pill px-5 fw-bold shadow-lg">
+            View All Cars & Full Fleet ({vehicles.length * 4}+ Available) →
+          </Button>
+        </div>
       </Container>
     </div>
   );

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import CarsPage from './pages/CarsPage';
 import AboutUs from './pages/AboutUs';
 import Faq from './pages/Faq';
 import ContactUs from './pages/ContactUs';
@@ -43,6 +44,7 @@ function App() {
           {/* Public Routes */}
           <Route element={<PublicLayout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/cars" element={<CarsPage />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/contact" element={<ContactUs />} />

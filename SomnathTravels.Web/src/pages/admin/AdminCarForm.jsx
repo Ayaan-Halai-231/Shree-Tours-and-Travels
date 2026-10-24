@@ -263,14 +263,123 @@ const AdminCarForm = () => {
                   />
                 </Form.Group>
               </Col>
-              <Col md={12}>
+
+              <Col md={4}>
+                <Form.Group>
+                  <Form.Label className="fw-semibold">Registration Number</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="registrationNumber"
+                    value={formData.registrationNumber || ''}
+                    onChange={handleChange}
+                    placeholder="e.g. GJ-11-AB-1234"
+                  />
+                </Form.Group>
+              </Col>
+
+              <Col md={4}>
+                <Form.Group>
+                  <Form.Label className="fw-semibold">Model Year</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="year"
+                    value={formData.year || ''}
+                    onChange={handleChange}
+                    placeholder="2024"
+                    min="2000"
+                    max={CURRENT_YEAR + 1}
+                  />
+                </Form.Group>
+              </Col>
+
+              <Col md={4}>
+                <Form.Group>
+                  <Form.Label className="fw-semibold">Vehicle Type</Form.Label>
+                  <Form.Select name="vehicleType" value={formData.vehicleType || 'Sedan'} onChange={handleChange}>
+                    <option value="Sedan">Sedan</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Compact SUV">Compact SUV</option>
+                    <option value="MUV">MUV</option>
+                    <option value="Luxury SUV">Luxury SUV</option>
+                    <option value="Luxury Sedan">Luxury Sedan</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Electric SUV">Electric SUV</option>
+                    <option value="Electric Sedan">Electric Sedan</option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+
+              <Col md={4}>
+                <Form.Group>
+                  <Form.Label className="fw-semibold text-dark">
+                    Fuel Type * <span className="text-warning fw-bold">(Dropdown)</span>
+                  </Form.Label>
+                  <Form.Select 
+                    name="fuelType" 
+                    value={formData.fuelType || 'Petrol'} 
+                    onChange={handleChange}
+                    className="border-warning"
+                    required
+                  >
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="CNG">CNG</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="CNG/Petrol">CNG / Petrol</option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+
+              <Col md={4}>
+                <Form.Group>
+                  <Form.Label className="fw-semibold text-dark">
+                    Seating Capacity *
+                  </Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="seatingCapacity"
+                    value={formData.seatingCapacity || ''}
+                    onChange={handleChange}
+                    min="1"
+                    max="50"
+                    placeholder="e.g. 5, 7, 8"
+                    required
+                  />
+                </Form.Group>
+              </Col>
+
+              <Col md={4}>
+                <Form.Group>
+                  <Form.Label className="fw-semibold">Transmission</Form.Label>
+                  <Form.Select name="transmission" value={formData.transmission || 'Automatic'} onChange={handleChange}>
+                    <option value="Manual">Manual</option>
+                    <option value="Automatic">Automatic</option>
+                  </Form.Select>
+                </Form.Group>
+              </Col>
+
+              <Col md={6}>
+                <Form.Group>
+                  <Form.Label className="fw-semibold">Color</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="color"
+                    value={formData.color || ''}
+                    onChange={handleChange}
+                    placeholder="e.g. Arctic White, Pearl Black, Silver"
+                  />
+                </Form.Group>
+              </Col>
+
+              <Col md={6}>
                 <Form.Group>
                   <Form.Label className="fw-semibold">Availability Status</Form.Label>
-                  <Form.Select name="status" value={formData.status} onChange={handleChange}>
-                    <option>Available</option>
-                    <option>Booked</option>
-                    <option>Maintenance</option>
-                    <option>Inactive</option>
+                  <Form.Select name="status" value={formData.status || 'Available'} onChange={handleChange}>
+                    <option value="Available">Available</option>
+                    <option value="Booked">Booked</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Inactive">Inactive</option>
                   </Form.Select>
                 </Form.Group>
               </Col>
@@ -389,9 +498,9 @@ const AdminCarForm = () => {
           </div>
           <div className="admin-section-body">
             <Row className="g-3">
-              <Col md={6}>
+              <Col md={4}>
                 <Form.Group>
-                  <Form.Label className="fw-semibold">Rent Per Day *</Form.Label>
+                  <Form.Label className="fw-semibold">Rent Per Day * (24 Hrs)</Form.Label>
                   <Form.Control
                     type="number"
                     step="0.01"
@@ -404,9 +513,9 @@ const AdminCarForm = () => {
                   />
                 </Form.Group>
               </Col>
-              <Col md={6}>
+              <Col md={4}>
                 <Form.Group>
-                  <Form.Label className="fw-semibold">Rent Per Hour</Form.Label>
+                  <Form.Label className="fw-semibold">Hourly Rate (₹/hr)</Form.Label>
                   <Form.Control
                     type="number"
                     step="0.01"
@@ -415,6 +524,48 @@ const AdminCarForm = () => {
                     onChange={handleChange}
                     min="0"
                     placeholder="e.g. 200"
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={4}>
+                <Form.Group>
+                  <Form.Label className="fw-semibold">Extra KM Charge (₹/km)</Form.Label>
+                  <Form.Control
+                    type="number"
+                    step="0.01"
+                    name="extraKilometreCharge"
+                    value={formData.extraKilometreCharge}
+                    onChange={handleChange}
+                    min="0"
+                    placeholder="e.g. 12"
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={6}>
+                <Form.Group>
+                  <Form.Label className="fw-semibold">Driver Allowance / Charge (₹/day)</Form.Label>
+                  <Form.Control
+                    type="number"
+                    step="0.01"
+                    name="driverCharge"
+                    value={formData.driverCharge}
+                    onChange={handleChange}
+                    min="0"
+                    placeholder="e.g. 500"
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={6}>
+                <Form.Group>
+                  <Form.Label className="fw-semibold">Security Deposit (₹)</Form.Label>
+                  <Form.Control
+                    type="number"
+                    step="0.01"
+                    name="securityDeposit"
+                    value={formData.securityDeposit}
+                    onChange={handleChange}
+                    min="0"
+                    placeholder="e.g. 5000"
                   />
                 </Form.Group>
               </Col>
